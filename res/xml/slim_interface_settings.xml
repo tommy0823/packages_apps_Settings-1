@@ -29,7 +29,6 @@
     <PreferenceScreen
         android:id="@+id/system_app_remover"
         android:title="@string/sizer_title"
-        android:layout="@layout/preference_systemappremover"
         android:fragment="com.android.settings.candykat.SystemappRemover" />
 
     <!-- Dpi on the fly -->
