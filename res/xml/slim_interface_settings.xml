@@ -66,4 +66,9 @@
         android:fragment="com.android.settings.slim.HardwareKeysSettings"
         android:title="@string/button_keys_title" />
 
+    <PreferenceScreen
+        android:key="shake_events"
+        android:fragment="com.android.settings.slim.ShakeEvents"
+        android:title="@string/shake_events_title" />
+
 </PreferenceScreen>
