@@ -1119,4 +1119,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierdo</string>
     <string name="recent_panel_lefty_mode_summary">Mostrar el panel de aps recientes en el lado izquierdo.</string>
 
+    <!-- Status bar notification count -->
+    <string name="status_bar_notification_count_title">Contador de notificaciones</string>
+    <string name="status_bar_notification_count_summary">Muestra número para notificaciones similares</string>
+
 </resources>
