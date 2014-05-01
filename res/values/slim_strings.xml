@@ -33,12 +33,13 @@
     <!-- Slim settings screens -->
     <string name="interface_settings_title">Candy Interface</string>
     <string name="navigation_settings_title">Navigation</string>
-    <string name="slim_center_title">SlimCenter</string>
+
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
 
     <!-- Slim Shortcuts -->
     <string name="slim_shortcut_picker">Slim Actions</string>
+    <string name="interface_settings_title">Interface</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -51,7 +52,7 @@
 
     <!-- About phone screen, slim version -->
     <string name="slim_version_title">CandyKat version</string>
-    <string name="slim_version_default">Unknown</string>
+    <string name="slim_version_default">ck</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Light options</string>
@@ -530,6 +531,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Navigation options</string>
+    <string name="navigation_settings_title">Navigation</string>
     <string name="power_menu_title">Global menu</string>
 
     <!-- Power menu -->
