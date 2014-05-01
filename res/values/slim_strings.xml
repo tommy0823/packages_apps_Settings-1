@@ -31,7 +31,7 @@
     <string name="header_category_rom_settings">Advanced settings</string>
 
     <!-- Slim settings screens -->
-    <string name="interface_settings_title">Interface</string>
+    <string name="interface_settings_title">Candy Interface</string>
     <string name="navigation_settings_title">Navigation</string>
     <string name="slim_center_title">SlimCenter</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
@@ -50,7 +50,7 @@
     <string name="set">Set</string>
 
     <!-- About phone screen, slim version -->
-    <string name="slim_version_title">Slim version</string>
+    <string name="slim_version_title">CandyKat version</string>
     <string name="slim_version_default">Unknown</string>
 
     <!-- Display settings screen, notification light settings -->
@@ -947,7 +947,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Show the pointer icon while using stylus</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">The real dark slim</string>
+    <string name="theme_settings_title">Dark Candy</string>
     <string name="theme_auto_mode_title">Switch theme</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">On light condition change</string>
