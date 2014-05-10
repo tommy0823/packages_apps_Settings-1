@@ -527,8 +527,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Sound settings, power notifications label for ringtone == none -->
     <string name="power_notifications_ringtone_silent">Silent</string>
 
-    <!-- Navigation settings -->
-    <string name="navigation_settings_options_title">Navigation options</string>
+    <!-- Global menu -->
     <string name="power_menu_title">Global menu</string>
 
     <!-- Power menu -->
@@ -579,8 +578,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
     <string name="navigation_bar_glow_tint_title">Glow color</string>
 
-    <!-- Advanced settings -->
-    <string name="advanced_options_settings_title">Advanced options</string>
+    <!-- CandyKat settings -->
+    <string name="advanced_options_settings_title">Candy settings</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>

@@ -19,9 +19,19 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="notification_drawer_qs"
+        android:fragment="com.android.settings.slim.NotificationDrawerQsSettings"
+        android:title="@string/notification_drawer_qs_title" />
+
     <Preference
         android:key="lcd_density"
         android:title="@string/custom_density_title" />
+
+    <PreferenceScreen
+        android:key="status_bar"
+        android:fragment="com.android.settings.slim.StatusBar"
+        android:title="@string/status_bar_title" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.slim.BatteryIconStyle"
@@ -29,13 +39,31 @@
         android:title="@string/battery_icon_title" />
 
     <PreferenceScreen
-        android:key="notification_drawer_qs"
-        android:fragment="com.android.settings.slim.NotificationDrawerQsSettings"
-        android:title="@string/notification_drawer_qs_title" />
+        android:key="pie_settings"
+        android:fragment="com.android.settings.slim.PieControl"
+        android:title="@string/pie_control_title" />
 
     <PreferenceScreen
-        android:key="status_bar"
-        android:fragment="com.android.settings.slim.StatusBar"
-        android:title="@string/status_bar_title" />
+        android:key="navbar_settings"
+        android:fragment="com.android.settings.slim.NavbarSettings"
+        android:title="@string/navigation_bar" />
+
+    <PreferenceScreen
+        android:key="global_menu_settings"
+        android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
+        android:title="@string/power_menu_title">
+            <extra android:name="buttonMode" android:value="6" />
+            <extra android:name="maxAllowedButtons" android:value="8" />
+            <extra android:name="disableLongpress" android:value="true" />
+            <extra android:name="disableDeleteLastEntry" android:value="true" />
+            <extra android:name="actionValues" android:value="shortcut_action_power_menu_values" />
+            <extra android:name="actionEntries" android:value="shortcut_action_power_menu_entries" />
+            <extra android:name="fragment" android:value="com.android.settings.slim.fragments.PowerMenuFragment" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="hardwarekeys_settings"
+        android:fragment="com.android.settings.slim.HardwareKeysSettings"
+        android:title="@string/button_keys_title" />
 
 </PreferenceScreen>
