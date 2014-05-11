@@ -578,8 +578,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
     <string name="navigation_bar_glow_tint_title">Glow color</string>
 
-    <!-- CandyKat settings -->
-    <string name="advanced_options_settings_title">Candy settings</string>
+    <!-- Advanced settings -->
+    <string name="advanced_options_settings_title">Advanced options</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
