@@ -137,11 +137,11 @@
                 android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
-        <!-- Slim version -->
-        <Preference android:key="slim_version"
+        <!-- CandyKat version -->
+        <Preference android:key="candykat_version"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/slim_version_title"
-                android:summary="@string/slim_version_default"/>
+                android:title="@string/candykat_version_title"
+                android:summary="@string/candykat_version_default"/>
 
         <!-- Detailed build version -->
         <Preference android:key="build_number"

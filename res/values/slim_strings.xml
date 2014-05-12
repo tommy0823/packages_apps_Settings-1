@@ -30,7 +30,7 @@
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Advanced settings</string>
 
-    <!-- Slim settings screens -->
+    <!-- CandyKat settings screens -->
     <string name="interface_settings_title">Candy Interface</string>
     <string name="navigation_settings_title">Navigation</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
@@ -48,9 +48,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
 
-    <!-- About phone screen, slim version -->
-    <string name="slim_version_title">CandyKat version</string>
-    <string name="slim_version_default">ck</string>
+    <!-- About phone screen, CandyKat version -->
+    <string name="candykat_version_title">CandyKat version</string>
+    <string name="candykat_version_default">Unknown</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Light options</string>
