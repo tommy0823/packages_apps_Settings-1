@@ -68,6 +68,9 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mLockscreenNotifications.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS, 1) == 1);
 
+        boolean hasProximitySensor = getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_PROXIMITY);
+
+        if (!hasProximitySensor) {
         mPocketMode = (CheckBoxPreference) prefs.findPreference(KEY_POCKET_MODE);
         mPocketMode.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 1) == 1);
@@ -77,7 +80,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mShowAlways.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS, 1) == 1);
         mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
-
+        }
         mWakeOnNotification = (CheckBoxPreference) prefs.findPreference(KEY_WAKE_ON_NOTIFICATION);
         mWakeOnNotification.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION, 0) == 1);
@@ -147,23 +150,19 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         Set<String> excludedApps = getExcludedApps();
         if (excludedApps != null) mExcludedAppsPref.setValues(excludedApps);
         mExcludedAppsPref.setOnPreferenceChangeListener(this);
-
-        boolean hasProximitySensor = getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_PROXIMITY);
-        if (!hasProximitySensor) {
-            PreferenceCategory general = (PreferenceCategory) prefs.findPreference(KEY_CATEGORY_GENERAL);
-            general.removePreference(mPocketMode);
-            general.removePreference(mShowAlways);
-        }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+
         ContentResolver cr = getActivity().getContentResolver();
         if (preference == mLockscreenNotifications) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS,
                     mLockscreenNotifications.isChecked() ? 1 : 0);
+            if (mPocketMode != null) {
             mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
             mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
+            }
             mWakeOnNotification.setEnabled(mLockscreenNotifications.isChecked());
             mHideLowPriority.setEnabled(mLockscreenNotifications.isChecked());
             mHideNonClearable.setEnabled(mLockscreenNotifications.isChecked());
