@@ -61,19 +61,19 @@
     <!-- Additional CandyKat controls -->
     <header android:title="@string/header_category_rom_settings" />
 
-    <!-- Interface -->
-    <header
-        android:id="@+id/interface_settings"
-        android:icon="@drawable/ic_settings_interface"
-        android:fragment="com.android.settings.slim.InterfaceSettings"
-        android:title="@string/interface_settings_title" />
-
     <!-- Themes -->
     <header
         android:id="@+id/theme_settings"
         android:fragment="com.android.settings.slim.themes.ThemeSettings"
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
+
+    <!-- Interface -->
+    <header
+        android:id="@+id/interface_settings"
+        android:icon="@drawable/ic_settings_interface"
+        android:fragment="com.android.settings.slim.InterfaceSettings"
+        android:title="@string/interface_settings_title" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
