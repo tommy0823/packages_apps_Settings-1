@@ -71,4 +71,15 @@
         android:fragment="com.android.settings.slim.ShakeEvents"
         android:title="@string/shake_events_title" />
 
+        <PreferenceCategory
+        android:key="notification_category"
+        android:title="@string/notification_category" >
+
+        <com.android.settings.slim.SystemSettingCheckBoxPreference
+            android:key="peek_state"
+            android:title="@string/notification_peek_title"
+            android:summary="@string/notification_peek_summary" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
