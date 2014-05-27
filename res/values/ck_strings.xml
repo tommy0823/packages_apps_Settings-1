@@ -2,6 +2,42 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- CandyKat settings screens -->
+    <string name="interface_settings_title">Candy Interface</string>
+    <string name="navigation_settings_title">Navigation</string>
+
+    <!-- About phone screen, CandyKat version -->
+    <string name="candykat_version_title">CandyKat version</string>
+    <string name="candykat_version_default">Unknown</string>
+
+    <!-- Lockscreen style settings -->
+    <string name="lockscreen_style_reset_message">Reset all lockscreen colors?</string>
+    <string name="lockscreen_icon_title">Lock handle icon</string>
+    <string name="lockscreen_lock_icon_custom">Custom icon</string>
+    <string name="lockscreen_lock_icon_slim">Candy icon</string>
+    <string name="lockscreen_lock_icon_default">Default icon</string>
+    <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
+    <string name="lockscreen_colorize_handle_summary">Lock color will be set to the lock handle</string>
+    <string name="lockscreen_style_title">Theme style</string>
+    <string name="lockscreen_frame_color_title">Frame color</string>
+    <string name="lockscreen_frame_color_summary">Color of the widget and unlock frames</string>
+    <string name="lockscreen_lock_color_title">Lock color</string>
+    <string name="lockscreen_lock_color_summary">Color of the lock handles</string>
+    <string name="lockscreen_dots_color_title">Dots color</string>
+    <string name="lockscreen_dots_color_summary">Color of the glowpad dots</string>
+    <string name="lockscreen_targets_color_title">Targets color</string>
+    <string name="lockscreen_targets_color_summary">Color of the challenge targets</string>
+    <string name="lockscreen_misc_color_title">Miscellaneous color</string>
+    <string name="lockscreen_misc_color_summary">Color of the remaining items</string>
+
+    <!-- Themes -->
+    <string name="theme_settings_title">Dark Candy</string>
+    <string name="theme_auto_mode_title">Switch theme</string>
+    <string name="theme_auto_mode_off">Manual</string>
+    <string name="theme_auto_mode_lightsensor">On light condition change</string>
+    <string name="theme_auto_mode_twilight">On daytime</string>
+    <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
+
     <!-- Density Changer -->
     <string name="custom_density_title">DPI Changer</string>
     <string name="set_custom_density_title">Set custom density</string>
