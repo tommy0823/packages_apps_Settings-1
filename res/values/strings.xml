@@ -706,7 +706,7 @@
     <!-- Main Settings screen setting option title for the item to take you to the location screen -->
     <string name="location_settings_title">Location</string>
     <!-- Main Settings screen setting option title for the item to take you to the security screen -->
-    <string name="security_settings_title">Security</string>
+    <string name="security_settings_title">Security &amp; lockscreen</string>
     <!-- Main Settings screen setting option summary text for the item tot ake you to the security and location screen -->
     <string name="security_settings_summary">Set My Location, screen unlock, SIM card lock, credential storage lock</string>
     <!-- Main Settings screen setting option summary text for the item to take you to the CDMA security and location screen -->
@@ -2526,7 +2526,7 @@
 
     <!-- Lock Pattern settings -->
     <!-- Security & location settings screen, header -->
-    <string name="lock_settings_title">Screen security</string>
+    <string name="lock_settings_title">Lockscreen</string>
     <!-- Security & location settings screen, setting option name -->
     <string name="lockpattern_change_lock_pattern_label">Change unlock pattern</string>
     <!-- Security & location settings screen, change unlock pattern screen instruction when the user chooses "Change unlock pattern".  We first ask the user toe nter the current pattern, and this is the message seen -->
