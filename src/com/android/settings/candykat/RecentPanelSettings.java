@@ -32,10 +32,13 @@ public class RecentPanelSettings extends SettingsPreferenceFragment
 
     private static final String TAG = "RecentPanelSettings";
 
+    private static final String RECENT_PANEL_SHOW_TOPMOST =
++            "recent_panel_show_topmost";
     private static final String RECENT_PANEL_LEFTY_MODE = "recent_panel_lefty_mode";
     private static final String RECENT_PANEL_SCALE = "recent_panel_scale";
     private static final String RECENT_PANEL_EXPANDED_MODE = "recent_panel_expanded_mode";
 
+    private CheckBoxPreference mRecentsShowTopmost;
     private CheckBoxPreference mRecentPanelLeftyMode;
     private ListPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
@@ -47,6 +50,12 @@ public class RecentPanelSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.recent_panel_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        boolean enableRecentsShowTopmost = Settings.System.getInt(getContentResolver(),
+                                      Settings.System.RECENT_PANEL_SHOW_TOPMOST, 0) == 1;
+        mRecentsShowTopmost = (CheckBoxPreference) findPreference(RECENT_PANEL_SHOW_TOPMOST);
+        mRecentsShowTopmost.setChecked(enableRecentsShowTopmost);
+        mRecentsShowTopmost.setOnPreferenceChangeListener(this);
 
         mRecentPanelLeftyMode = (CheckBoxPreference) findPreference(RECENT_PANEL_LEFTY_MODE);
         mRecentPanelLeftyMode.setOnPreferenceChangeListener(this);
@@ -73,6 +82,11 @@ public class RecentPanelSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.RECENT_PANEL_GRAVITY,
                     ((Boolean) newValue) ? Gravity.LEFT : Gravity.RIGHT);
+            return true;
+        } else if (preference == mRecentsShowTopmost) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENT_PANEL_SHOW_TOPMOST,
+                    ((Boolean) newValue) ? 1 : 0);
             return true;
         } else if (preference == mRecentPanelExpandedMode) {
             int value = Integer.parseInt((String) newValue);
