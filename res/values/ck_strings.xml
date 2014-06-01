@@ -111,6 +111,10 @@
     <string name="status_bar_notification_count_title">Notification count</string>
     <string name="status_bar_notification_count_summary">Display number of similar notifications</string>
 
+     <!-- Custom notification panel header -->
+    <string name="custom_statusbar_header_title">Contextual notification panel header</string>
+    <string name="custom_statusbar_header_summary">Sets the background of the notification panel header to an image based on the current date and time</string>
+
     <!--Notification peek-->
     <string name="notification_peek_title">Notification peek</string>
     <string name="notification_peek_summary">Show latest notification after picking up your device</string>
