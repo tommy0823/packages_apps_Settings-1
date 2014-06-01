@@ -49,6 +49,11 @@
         android:title="@string/navigation_bar" />
 
     <PreferenceScreen
+        android:key="app_circle_sidebar"
+        android:fragment="com.android.settings.candykat.omni.AppCircleSidebar"
+        android:title="@string/app_circle_bar_title" />
+
+    <PreferenceScreen
         android:key="global_menu_settings"
         android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
         android:title="@string/power_menu_title">
@@ -76,5 +81,5 @@
         android:fragment="com.android.settings.slim.PeekSettings"
         android:title="@string/peek_settings_title" />
 
-  </PreferenceScreen>
 
+</PreferenceScreen>
