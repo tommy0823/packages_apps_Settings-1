@@ -1210,4 +1210,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notifications_height_summary">Número de notificaciones mostradas</string>
     <string name="lockscreen_notifications_excluded_apps_title">Aplicaciones excluídas</string>
 
+    <!-- App moving -->
+    <string name="app_moving_enable">Habilitar mover aps.</string>
+    <string name="app_moving_disable">Deshabilitar mover aps.</string>
+    <string name="app_moving_reboot_title">¿Reinicar ahora?</string>
+    <string name="app_moving_reboot_enabled_desc">Se ha habilitado el poder mover aplicaciones.\n\nPara que los cambios se apliquen es necesario reiniciar el dispositivo.</string>
+    <string name="app_moving_reboot_disabled_desc">Se ha deshabilitado el poder mover aplicaciones.\n\nPara que los cambios se apliquen es necesario reiniciar el dispositivo.</string>
+    <string name="app_moving_reboot_now_button">Reiniciar ahora</string>
+    <string name="app_moving_reboot_later_button">Reiniciar más tarde</string>
+
 </resources>
