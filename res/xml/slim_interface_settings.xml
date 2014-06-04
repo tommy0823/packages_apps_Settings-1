@@ -71,29 +71,10 @@
         android:fragment="com.android.settings.slim.ShakeEvents"
         android:title="@string/shake_events_title" />
 
-        <PreferenceCategory
-        android:key="notification_category"
-        android:title="@string/notification_category" >
+    <PreferenceScreen
+        android:key="peek_settings"
+        android:fragment="com.android.settings.slim.PeekSettings"
+        android:title="@string/peek_settings_title" />
 
-        <com.android.settings.slim.SystemSettingCheckBoxPreference
-            android:key="peek_state"
-            android:title="@string/notification_peek_title"
-            android:summary="@string/notification_peek_summary" />
+  </PreferenceScreen>
 
-        <ListPreference
-            android:key="peek_pickup_timeout"
-            android:title="@string/peek_pickup_timeout_title"
-            android:entries="@array/peek_pickup_timeout_entries"
-            android:entryValues="@array/peek_pickup_timeout_values"
-            android:dependency="peek_state" />
-
-         <ListPreference
-            android:key="peek_wake_timeout"
-            android:title="@string/peek_wake_timeout_title"
-            android:entries="@array/peek_wake_timeout_entries"
-            android:entryValues="@array/peek_wake_timeout_values"
-            android:dependency="peek_state" />
-
-    </PreferenceCategory>
-
-</PreferenceScreen>

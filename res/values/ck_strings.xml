@@ -115,10 +115,10 @@
     <string name="custom_statusbar_header_title">Contextual notification panel header</string>
     <string name="custom_statusbar_header_summary">Sets the background of the notification panel header to an image based on the current date and time</string>
 
-    <!--Notification peek-->
-    <string name="notification_peek_title">Notification peek</string>
-    <string name="notification_peek_summary">Show latest notification after picking up your device</string>
-    <string name="peek_wake_timeout_title">Peek wake timeout</string>
+    <!-- Peek -->
+    <string name="peek_settings_title">Peek</string>
+    <string name="notification_peek_title">Peek on/off</string>
+     <string name="peek_wake_timeout_title">Peek wake timeout</string>
     <string name="peek_pickup_timeout_title">Peek pickup timeout</string>
     <string name="peek_pickup_7seconds">7 seconds (default)</string>
     <string name="peek_pickup_15seconds">15 seconds</string>
@@ -132,7 +132,5 @@
     <string name="peek_wake_10seconds">10 seconds</string>
     <string name="peek_wake_20seconds">20 seconds</string>
     <string name="peek_wake_30seconds">30 seconds</string>
-
    
-
 </resources>
