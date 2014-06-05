@@ -20,38 +20,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
-        android:key="notification_drawer_qs"
-        android:fragment="com.android.settings.slim.NotificationDrawerQsSettings"
-        android:title="@string/notification_drawer_qs_title" />
-
-    <Preference
-        android:key="lcd_density"
-        android:title="@string/custom_density_title" />
-
-    <PreferenceScreen
-        android:key="status_bar"
-        android:fragment="com.android.settings.slim.StatusBar"
-        android:title="@string/status_bar_title" />
+        android:key="app_circle_sidebar"
+        android:fragment="com.android.settings.candykat.AppCircleSidebar"
+        android:title="@string/app_circle_bar_title" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.slim.BatteryIconStyle"
         android:key="battery_style_pref"
         android:title="@string/battery_icon_title" />
 
-    <PreferenceScreen
-        android:key="pie_settings"
-        android:fragment="com.android.settings.slim.PieControl"
-        android:title="@string/pie_control_title" />
-
-    <PreferenceScreen
-        android:key="navbar_settings"
-        android:fragment="com.android.settings.slim.NavbarSettings"
-        android:title="@string/navigation_bar" />
-
-    <PreferenceScreen
-        android:key="app_circle_sidebar"
-        android:fragment="com.android.settings.candykat.omni.AppCircleSidebar"
-        android:title="@string/app_circle_bar_title" />
+    <Preference
+        android:key="lcd_density"
+        android:title="@string/custom_density_title" />
 
     <PreferenceScreen
         android:key="global_menu_settings"
@@ -72,14 +52,33 @@
         android:title="@string/button_keys_title" />
 
     <PreferenceScreen
-        android:key="shake_events"
-        android:fragment="com.android.settings.slim.ShakeEvents"
-        android:title="@string/shake_events_title" />
+        android:key="navbar_settings"
+        android:fragment="com.android.settings.slim.NavbarSettings"
+        android:title="@string/navigation_bar" />
+
+    <PreferenceScreen
+        android:key="notification_drawer_qs"
+        android:fragment="com.android.settings.slim.NotificationDrawerQsSettings"
+        android:title="@string/notification_drawer_qs_title" />
 
     <PreferenceScreen
         android:key="peek_settings"
         android:fragment="com.android.settings.slim.PeekSettings"
         android:title="@string/peek_settings_title" />
 
+    <PreferenceScreen
+        android:key="pie_settings"
+        android:fragment="com.android.settings.slim.PieControl"
+        android:title="@string/pie_control_title" />
+
+    <PreferenceScreen
+        android:key="shake_events"
+        android:fragment="com.android.settings.slim.ShakeEvents"
+        android:title="@string/shake_events_title" />
+
+    <PreferenceScreen
+        android:key="status_bar"
+        android:fragment="com.android.settings.slim.StatusBar"
+        android:title="@string/status_bar_title" />
 
 </PreferenceScreen>
