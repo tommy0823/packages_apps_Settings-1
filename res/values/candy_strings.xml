@@ -141,4 +141,9 @@
     <string name="app_circle_bar_included_apps_summary">Apps will show in app sidebar</string>
     <string name="category_app_circle_bar_title">App launcher</string>
    
+    <!--Blacklist-->
+    <string name="blacklist_button_title">Blacklist</string>
+    <string name="peek_blacklist_label">Blacklist from Peek</string>
+    <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
+
 </resources>

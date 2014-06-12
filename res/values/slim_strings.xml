@@ -372,11 +372,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_prefs_title">Options</string>
     <string name="battery_stats_title">Statistics</string>
 
-    <!--Blacklist-->
-    <string name="blacklist_button_title">Blacklist</string>
-    <string name="peek_blacklist_label">Blacklist from Peek</string>
-    <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
-
     <!-- Button shorcut actions -->
     <string name="shortcut_action_keyguard_camera">Keyguard camera</string>
     <string name="shortcut_action_navbar">Navigation bar</string>
@@ -1155,7 +1150,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_interval_3s">3 seconds</string>
     <string name="noti_reminder_interval_3dot5s">3.5 second</string>
     <string name="noti_reminder_interval_4s">4 seconds</string>
-
 
     <!-- Recent panel -->
     <string name="recent_panel_category">Recent apps panel</string>
