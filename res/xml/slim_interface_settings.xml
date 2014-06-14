@@ -45,6 +45,12 @@
             <extra android:name="actionEntries" android:value="shortcut_action_power_menu_entries" />
             <extra android:name="fragment" android:value="com.android.settings.slim.fragments.PowerMenuFragment" />
     </PreferenceScreen>
+		
+    <PreferenceScreen
+    	android:key="hover_settings"
+        android:title="@string/hover_title"
+        android:summary="@string/hover_summary"
+        android:fragment="com.android.settings.candykat.HoverSettings" />
 
     <PreferenceScreen
         android:key="hardwarekeys_settings"
