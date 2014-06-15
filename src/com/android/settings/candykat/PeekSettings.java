@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim;
+package com.android.settings.candykat;
 
 import android.app.ActivityManager;
 import android.content.ContentResolver;
@@ -54,7 +54,7 @@ public class PeekSettings extends SettingsPreferenceFragment implements
 
         mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
         int peekPickupTimeout = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.PEEK_PICKUP_TIMEOUT, 15000, UserHandle.USER_CURRENT);
+                Settings.System.PEEK_PICKUP_TIMEOUT, 7000, UserHandle.USER_CURRENT);
         mPeekPickupTimeout.setValue(String.valueOf(peekPickupTimeout));
         mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
         mPeekPickupTimeout.setOnPreferenceChangeListener(this);

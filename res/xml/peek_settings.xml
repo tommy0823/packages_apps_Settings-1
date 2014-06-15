@@ -19,7 +19,7 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.android.settings.slim.SystemSettingCheckBoxPreference
+        <com.android.settings.candykat.SystemSettingCheckBoxPreference
             android:key="peek_state"
             android:title="@string/notification_peek_title" />
 

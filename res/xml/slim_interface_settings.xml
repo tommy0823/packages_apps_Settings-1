@@ -63,7 +63,7 @@
 
     <PreferenceScreen
         android:key="peek_settings"
-        android:fragment="com.android.settings.slim.PeekSettings"
+        android:fragment="com.android.settings.candykat.PeekSettings"
         android:title="@string/peek_settings_title" />
 
     <PreferenceScreen

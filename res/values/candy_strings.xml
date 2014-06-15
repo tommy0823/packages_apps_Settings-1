@@ -117,7 +117,7 @@
     <!-- Peek -->
     <string name="peek_settings_title">Peek</string>
     <string name="notification_peek_title">Peek on/off</string>
-     <string name="peek_wake_timeout_title">Peek wake timeout</string>
+    <string name="peek_wake_timeout_title">Peek wake timeout</string>
     <string name="peek_pickup_timeout_title">Peek pickup timeout</string>
     <string name="peek_pickup_7seconds">7 seconds (default)</string>
     <string name="peek_pickup_15seconds">15 seconds</string>
