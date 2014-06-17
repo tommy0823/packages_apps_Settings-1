@@ -15,24 +15,37 @@
         android:key="hover_hide_button"
         android:title="@string/hover_hide_button_title"
         android:summary="@string/hover_hide_button_summary"
+        android:dependency="hover_active"
         android:defaultValue="false" />
 
     <com.android.settings.candykat.SystemCheckBoxPreference
         android:key="hover_exclude_non_clearable"
         android:title="@string/hover_exclude_non_clearable_title"
         android:summary="@string/hover_exclude_non_clearable_summary"
+        android:dependency="hover_active"
         android:defaultValue="false" />
 
     <com.android.settings.candykat.SystemCheckBoxPreference
         android:key="hover_exclude_low_priority"
         android:title="@string/hover_exclude_low_priority_title"
         android:summary="@string/hover_exclude_low_priority_summary"
+        android:dependency="hover_active"
         android:defaultValue="false" />
 
     <com.android.settings.candykat.SystemCheckBoxPreference
         android:key="hover_exclude_topmost"
         android:title="@string/hover_exclude_topmost_title"
         android:summary="@string/hover_exclude_topmost_summary"
+        android:dependency="hover_active"
         android:defaultValue="true" />
+
+    <com.android.settings.candykat.SystemListPreference
+        android:key="hover_long_fade_out_delay"
+        android:title="@string/hover_long_fadeout_title"
+        android:dialogTitle="@string/hover_long_fadeout_title"
+        android:entries="@array/hover_long_fadeout_entries"
+        android:entryValues="@array/hover_long_fadeout_values"
+        android:dependency="hover_active"
+        android:defaultValue="5000" />
 
 </PreferenceScreen>
