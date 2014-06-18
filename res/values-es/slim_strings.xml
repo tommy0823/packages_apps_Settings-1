@@ -1199,17 +1199,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_notification_count_title">Contador de notificaciones</string>
     <string name="status_bar_notification_count_summary">Muestra número para notificaciones similares</string>
 
-    <string name="lockscreen_notifications">Notificaciones en pantalla de bloqueo</string>
-    <string name="lockscreen_notifications_summary">Muestra notificaciones pendientes en la pantalla de bloqueo</string>
-    <string name="pocket_mode">Modo bolsillo</string>
-    <string name="pocket_mode_summary">Prende la pantalla y muestra notificaciones cuando el teléfono es sacado del bolsillo. Apaga la pantalla si el teléfono es metido en el bolsillo.</string>
-    <string name="wake_on_notification">Despertar en notificación</string>
-    <string name="wake_on_notification_summary">Despierta el teléfono si se recive una nueva notificación</string>
-    <string name="lockscreen_notifications_type">Tipos de notificaciones a mostrar</string>
-    <string name="notifications_height">Contador de notificaciones</string>
-    <string name="notifications_height_summary">Número de notificaciones mostradas</string>
-    <string name="lockscreen_notifications_excluded_apps_title">Aplicaciones excluídas</string>
-
     <!-- App moving -->
     <string name="app_moving_enable">Habilitar mover aps.</string>
     <string name="app_moving_disable">Deshabilitar mover aps.</string>
