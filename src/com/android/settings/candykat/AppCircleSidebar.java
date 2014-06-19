@@ -37,7 +37,7 @@ import android.text.TextUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.android.settings.candykat.lsn.AppMultiSelectListPreference;
+import com.android.settings.candykat.AppMultiSelectListPreference;
 import com.android.internal.util.slim.DeviceUtils;
 
 import java.util.Arrays;
