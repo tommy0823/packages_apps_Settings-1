@@ -692,7 +692,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="display_rotation_270_title">270 degrees</string>
 
     <!-- Lock Screen ASS -->
-    <string name="lock_screen_title">Slider targets and shortcuts</string>
+    <string name="lock_screen_title">Lockscreen</string>
     <string name="lock_screen_summary">View or change the slider targets and shortcuts</string>
 
     <!-- Lock Screen Targets -->
