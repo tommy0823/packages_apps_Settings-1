@@ -33,7 +33,7 @@ public class RecentPanelSettings extends SettingsPreferenceFragment
     private static final String TAG = "RecentPanelSettings";
 
     private static final String RECENT_PANEL_SHOW_TOPMOST =
-+            "recent_panel_show_topmost";
+            "recent_panel_show_topmost";
     private static final String RECENT_PANEL_LEFTY_MODE = "recent_panel_lefty_mode";
     private static final String RECENT_PANEL_SCALE = "recent_panel_scale";
     private static final String RECENT_PANEL_EXPANDED_MODE = "recent_panel_expanded_mode";
