@@ -26,32 +26,25 @@
             android:summary="@string/unlock_set_unlock_mode_off"
             android:persistent="false"/>
 
-        <PreferenceScreen
-            android:key="keyguard_style"
-            android:fragment="com.android.settings.slim.LockscreenStyle"
-            android:title="@string/lockscreen_style_title"/>
+         <PreferenceScreen
+            android:fragment="com.android.settings.slim.KeyguardShakeEvents"
+            android:key="shake_events"
+            android:title="@string/shake_events_title" />
 
         <ListPreference
-            android:key="lockscreen_rotation"
-            android:title="@string/lockscreen_rotation_title"
-            android:entries="@array/lockscreen_rotation_entries"
-            android:entryValues="@array/lockscreen_rotation_values" />
+            android:key="shake_to_secure_mode"
+            android:entries="@array/shake_secure_entries"
+            android:entryValues="@array/shake_secure_values"
+            android:title="@string/shake_to_secure_title"
+            android:summary="@string/shake_to_secure_summary" />
 
-        <CheckBoxPreference
-            android:key="lockscreen_battery_status"
-            android:title="@string/lockscreen_battery_status_title"
-            android:summary="@string/lockscreen_battery_status_summary" />
+          <ListPreference
+            android:key="shake_auto_timeout"
+            android:title="@string/shake_secure_timeout_title"
+            android:entries="@array/shake_secure_timeout_entries"
+            android:entryValues="@array/shake_secure_timeout_values"
+            android:persistent="false"/>
 
-        <PreferenceScreen
-            android:key="keyguard_enable_widgets"
-            android:fragment="com.android.settings.slim.LockscreenWidgets"
-            android:title="@string/lockscreen_widgets_title"/>
-
-        <PreferenceScreen
-            android:fragment="com.android.settings.OwnerInfoSettings"
-            android:key="owner_info_settings"
-            android:title="@string/owner_info_settings_title"
-            android:summary="@string/owner_info_settings_summary"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
