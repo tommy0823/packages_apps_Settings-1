@@ -199,4 +199,8 @@
     <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
     <string name="notification_color">Notification background color</string>
 
+     <!-- Flip Tiles -->
+    <string name="flip_qs_tiles_title">Flip tiles</string>
+    <string name="flip_qs_tiles_summary">Tiles use a flip animation on touch</string>
+
 </resources>

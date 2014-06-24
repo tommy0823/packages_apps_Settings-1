@@ -96,6 +96,12 @@
     <PreferenceCategory
         android:title="@string/quick_settings_title" />
 
+         <com.android.settings.candykat.SystemSettingCheckBoxPreference
+            android:key="quick_settings_tiles_flip"
+            android:title="@string/flip_qs_tiles_title"
+            android:summary="@string/flip_qs_tiles_summary"
+            android:defaultValue="true" />
+
         <PreferenceScreen
             android:key="tile_picker"
             android:title="@string/tile_picker_title"
