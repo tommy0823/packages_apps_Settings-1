@@ -27,21 +27,17 @@
             android:summary="@string/unlock_set_unlock_mode_none"
             android:persistent="false"/>
 
+          <PreferenceScreen
+            android:fragment="com.android.settings.slim.KeyguardShakeEvents"
+            android:key="shake_events"
+            android:title="@string/shake_events_title" />
+
+
          <CheckBoxPreference
             android:key="menu_unlock"
             android:title="@string/unlock_menu_unlock_title"
             android:summary="@string/unlock_menu_unlock_summary" />
 
-         <ListPreference
-            android:key="lockscreen_rotation"
-            android:title="@string/lockscreen_rotation_title"
-            android:entries="@array/lockscreen_rotation_entries"
-            android:entryValues="@array/lockscreen_rotation_values" />
-
-        <CheckBoxPreference
-            android:key="lockscreen_battery_status"
-            android:title="@string/lockscreen_battery_status_title"
-            android:summary="@string/lockscreen_battery_status_summary" />
    </PreferenceCategory>
 
 </PreferenceScreen>
