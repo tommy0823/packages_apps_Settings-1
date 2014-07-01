@@ -19,12 +19,11 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.view.Gravity;
 
-import com.android.internal.util.candykat.DeviceUtils;
+import com.android.internal.util.slim.DeviceUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.candykat.util.Helpers;
 
 public class HoverSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
