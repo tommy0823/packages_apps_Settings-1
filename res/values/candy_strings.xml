@@ -204,8 +204,7 @@
     <string name="flip_qs_tiles_summary">Tiles use a flip animation on touch</string>
 
     <!-- Hover settings -->
-    <string name="hover_title">Hover settings</string>
-    <string name="hover_summary">Enables and customize hover notifications</string>
+    <string name="hover_title">Hover</string>
     <string name="hover_enabled_title">Enable Hover</string>
     <string name="hover_enabled_summary">Enable the hover notification system</string>
     <string name="hover_hide_button_title">Hide button</string>

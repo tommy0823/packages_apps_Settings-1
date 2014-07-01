@@ -49,7 +49,6 @@
     <PreferenceScreen
     	android:key="hover_settings"
         android:title="@string/hover_title"
-        android:summary="@string/hover_summary"
         android:fragment="com.android.settings.candykat.HoverSettings" />
 
     <PreferenceScreen
