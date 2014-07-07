@@ -27,6 +27,8 @@ import android.telephony.PhoneStateListener;
 import android.telephony.SmsMessage;
 import android.telephony.TelephonyManager;
 
+import com.android.internal.util.slim.QuietHoursHelper;
+
 import com.android.settings.R;
 
 public class SmsCallService extends Service {
@@ -58,39 +60,39 @@ public class SmsCallService extends Service {
             if (state == TelephonyManager.CALL_STATE_RINGING) {
                 mIncomingCall = true;
                 mIncomingNumber = incomingNumber;
-                final int bypassPreference = QuietHoursController.getInstance(
+                final int bypassPreference = SmsCallController.getInstance(
                         SmsCallService.this).returnUserCallBypass();
-                final boolean isContact = QuietHoursController.getInstance(
+                final boolean isContact = SmsCallController.getInstance(
                         SmsCallService.this).isContact(mIncomingNumber);
                 boolean isStarred = false;
 
                 if (isContact) {
-                    isStarred = QuietHoursController.getInstance(
+                    isStarred = SmsCallController.getInstance(
                             SmsCallService.this).isStarred(mIncomingNumber);
                 }
 
                 if (!mKeepCounting) {
                     mKeepCounting = true;
                     mBypassCallCount = 0;
-                    mDay = QuietHoursController.getInstance(SmsCallService.this).returnDayOfMonth();
-                    mMinutes = QuietHoursController.getInstance(SmsCallService.this).returnTimeInMinutes();
+                    mDay = SmsCallController.getInstance(SmsCallService.this).returnDayOfMonth();
+                    mMinutes = SmsCallController.getInstance(SmsCallService.this).returnTimeInMinutes();
                 }
 
-                boolean timeConstraintMet = QuietHoursController.getInstance(
+                boolean timeConstraintMet = SmsCallController.getInstance(
                         SmsCallService.this).returnTimeConstraintMet(mMinutes, mDay);
                 if (timeConstraintMet) {
                     switch (bypassPreference) {
-                        case QuietHoursController.DEFAULT_DISABLED:
+                        case SmsCallController.DEFAULT_DISABLED:
                             break;
-                        case QuietHoursController.ALL_NUMBERS:
+                        case SmsCallController.ALL_NUMBERS:
                             mBypassCallCount++;
                             break;
-                        case QuietHoursController.CONTACTS_ONLY:
+                        case SmsCallController.CONTACTS_ONLY:
                             if (isContact) {
                                 mBypassCallCount++;
                             }
                             break;
-                        case QuietHoursController.STARRED_ONLY:
+                        case SmsCallController.STARRED_ONLY:
                             if (isStarred) {
                                 mBypassCallCount++;
                             }
@@ -102,12 +104,12 @@ public class SmsCallService extends Service {
                     }
                 } else {
                     switch (bypassPreference) {
-                        case QuietHoursController.DEFAULT_DISABLED:
+                        case SmsCallController.DEFAULT_DISABLED:
                             break;
-                        case QuietHoursController.ALL_NUMBERS:
+                        case SmsCallController.ALL_NUMBERS:
                             mBypassCallCount = 1;
                             break;
-                        case QuietHoursController.CONTACTS_ONLY:
+                        case SmsCallController.CONTACTS_ONLY:
                             if (isContact) {
                                 mBypassCallCount = 1;
                             } else {
@@ -115,7 +117,7 @@ public class SmsCallService extends Service {
                                 mKeepCounting = false;
                             }
                             break;
-                        case QuietHoursController.STARRED_ONLY:
+                        case SmsCallController.STARRED_ONLY:
                             if (isStarred) {
                                 mBypassCallCount = 1;
                             } else {
@@ -124,16 +126,15 @@ public class SmsCallService extends Service {
                             }
                             break;
                     }
-                    mDay = QuietHoursController.getInstance(
+                    mDay = SmsCallController.getInstance(
                             SmsCallService.this).returnDayOfMonth();
-                    mMinutes = QuietHoursController.getInstance(
+                    mMinutes = SmsCallController.getInstance(
                             SmsCallService.this).returnTimeInMinutes();
                 }
                 if ((mBypassCallCount
-                        == QuietHoursController.getInstance(
+                        == SmsCallController.getInstance(
                                 SmsCallService.this).returnUserCallBypassCount())
-                        && QuietHoursController.getInstance(
-                                SmsCallService.this).quietHoursActive()
+                        && QuietHoursHelper.inQuietHours(SmsCallService.this, null)
                         && timeConstraintMet) {
                     // Don't auto-respond if alarm fired
                     mIncomingCall = false;
@@ -153,14 +154,13 @@ public class SmsCallService extends Service {
             if (state == TelephonyManager.CALL_STATE_IDLE && mIncomingCall) {
                 // Call Received and now inactive
                 mIncomingCall = false;
-                final int userAutoSms = QuietHoursController.getInstance(
+                final int userAutoSms = SmsCallController.getInstance(
                         SmsCallService.this).returnUserAutoCall();
 
-                if (userAutoSms != QuietHoursController.DEFAULT_DISABLED
-                        && QuietHoursController.getInstance(
-                        SmsCallService.this).quietHoursActive()) {
+                if (userAutoSms != SmsCallController.DEFAULT_DISABLED
+                        && QuietHoursHelper.inQuietHours(SmsCallService.this, null)) {
                     final boolean isContact =
-                            QuietHoursController.getInstance(
+                            SmsCallController.getInstance(
                                     SmsCallService.this).isContact(mIncomingNumber);
                     checkTimeAndNumber(mIncomingNumber, userAutoSms, isContact);
                 }
@@ -178,45 +178,43 @@ public class SmsCallService extends Service {
             String incomingNumber = msg.getOriginatingAddress();
             boolean nawDawg = false;
             final int userAutoSms =
-                    QuietHoursController.getInstance(SmsCallService.this).returnUserAutoText();
+                    SmsCallController.getInstance(SmsCallService.this).returnUserAutoText();
             final int bypassCodePref =
-                    QuietHoursController.getInstance(SmsCallService.this).returnUserTextBypass();
+                    SmsCallController.getInstance(SmsCallService.this).returnUserTextBypass();
             final boolean isContact =
-                    QuietHoursController.getInstance(
+                    SmsCallController.getInstance(
                             SmsCallService.this).isContact(incomingNumber);
-
             boolean isStarred = false;
 
             if (isContact) {
-                isStarred = QuietHoursController.getInstance(
+                isStarred = SmsCallController.getInstance(
                         SmsCallService.this).isStarred(incomingNumber);
             }
 
-            if ((bypassCodePref != QuietHoursController.DEFAULT_DISABLED
-                   || userAutoSms != QuietHoursController.DEFAULT_DISABLED)
-                    && QuietHoursController.getInstance(
-                    SmsCallService.this).quietHoursActive()) {
+            if ((bypassCodePref != SmsCallController.DEFAULT_DISABLED
+                   || userAutoSms != SmsCallController.DEFAULT_DISABLED)
+                    && QuietHoursHelper.inQuietHours(SmsCallService.this, null)) {
                 final String bypassCode =
-                        QuietHoursController.getInstance(
+                        SmsCallController.getInstance(
                                 SmsCallService.this).returnUserTextBypassCode();
                 final String messageBody = msg.getMessageBody();
                 if (messageBody.contains(bypassCode)) {
                    switch (bypassCodePref) {
-                       case QuietHoursController.DEFAULT_DISABLED:
+                       case SmsCallController.DEFAULT_DISABLED:
                            break;
-                       case QuietHoursController.ALL_NUMBERS:
+                       case SmsCallController.ALL_NUMBERS:
                            // Sound Alarm && Don't auto-respond
                            nawDawg = true;
                            startAlarm(incomingNumber);
                            break;
-                       case QuietHoursController.CONTACTS_ONLY:
+                       case SmsCallController.CONTACTS_ONLY:
                            if (isContact) {
                                // Sound Alarm && Don't auto-respond
                                nawDawg = true;
                                startAlarm(incomingNumber);
                            }
                            break;
-                       case QuietHoursController.STARRED_ONLY:
+                       case SmsCallController.STARRED_ONLY:
                            if (isStarred) {
                                // Sound Alarm && Don't auto-respond
                                nawDawg = true;
@@ -225,7 +223,7 @@ public class SmsCallService extends Service {
                            break;
                     }
                 }
-                if (userAutoSms != QuietHoursController.DEFAULT_DISABLED && nawDawg == false) {
+                if (userAutoSms != SmsCallController.DEFAULT_DISABLED && nawDawg == false) {
                     checkTimeAndNumber(incomingNumber, userAutoSms, isContact);
                 }
             }
@@ -269,25 +267,25 @@ public class SmsCallService extends Service {
      */
     private void checkTimeAndNumber(String incomingNumber,
             int userSetting, boolean isContact) {
-        final int minutesNow = QuietHoursController.getInstance(this).returnTimeInMinutes();
+        final int minutesNow = SmsCallController.getInstance(this).returnTimeInMinutes();
         if (minutesNow != mMinuteSent) {
             mNumberSent = incomingNumber;
-            mMinuteSent = QuietHoursController.getInstance(this).returnTimeInMinutes();
-            QuietHoursController.getInstance(this).checkSmsQualifiers(
+            mMinuteSent = SmsCallController.getInstance(this).returnTimeInMinutes();
+            SmsCallController.getInstance(this).checkSmsQualifiers(
                     incomingNumber, userSetting, isContact);
         } else {
             // Let's try to send if number doesn't match prior
             if (!incomingNumber.equals(mNumberSent)) {
                 mNumberSent = incomingNumber;
-                mMinuteSent = QuietHoursController.getInstance(this).returnTimeInMinutes();
-                QuietHoursController.getInstance(this).checkSmsQualifiers(
+                mMinuteSent = SmsCallController.getInstance(this).returnTimeInMinutes();
+                SmsCallController.getInstance(this).checkSmsQualifiers(
                         incomingNumber, userSetting, isContact);
             }
         }
     }
 
     private void startAlarm(String phoneNumber) {
-        String contactName = QuietHoursController.getInstance(this).returnContactName(phoneNumber);
+        String contactName = SmsCallController.getInstance(this).returnContactName(phoneNumber);
         Intent alarmDialog = new Intent();
         alarmDialog.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_SINGLE_TOP

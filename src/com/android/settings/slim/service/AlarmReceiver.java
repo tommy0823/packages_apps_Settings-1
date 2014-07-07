@@ -24,16 +24,9 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     private final static String TAG = "AlarmReceiver";
 
-    private static final String UPDATE_QUIET_HOURS_MODES =
-            "com.android.settings.slim.service.UPDATE_QUIET_HOURS_MODES";
-
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (intent.getAction().equals(UPDATE_QUIET_HOURS_MODES)) {
-            QuietHoursController.getInstance(context).checkModes();
-        } else {
-            QuietHoursController.getInstance(context).scheduleService();
-        }
+        SmsCallController.getInstance(context).scheduleService();
     }
 
 }

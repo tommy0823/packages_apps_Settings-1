@@ -17,7 +17,6 @@
             android:background="?android:attr/selectableItemBackground">
 
             <TextView
-                android:id="@+id/start_time_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -57,7 +56,6 @@
             android:background="?android:attr/selectableItemBackground">
 
             <TextView
-                android:id="@+id/end_time_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
