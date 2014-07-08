@@ -19,20 +19,24 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- App circle -->
     <PreferenceScreen
         android:key="app_circle_sidebar"
         android:fragment="com.android.settings.candykat.AppCircleSidebar"
         android:title="@string/app_circle_bar_title" />
 
+    <!-- Battery icon -->
     <PreferenceScreen
         android:fragment="com.android.settings.slim.BatteryIconStyle"
         android:key="battery_style_pref"
         android:title="@string/battery_icon_title" />
 
+    <!-- Dpi on the fly -->
     <Preference
         android:key="lcd_density"
         android:title="@string/custom_density_title" />
 
+    <!-- Global menu -->
     <PreferenceScreen
         android:key="global_menu_settings"
         android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
@@ -45,52 +49,69 @@
             <extra android:name="actionEntries" android:value="shortcut_action_power_menu_entries" />
             <extra android:name="fragment" android:value="com.android.settings.slim.fragments.PowerMenuFragment" />
     </PreferenceScreen>
-		
-    <PreferenceScreen
-    	android:key="hover_settings"
-        android:title="@string/hover_title"
-        android:fragment="com.android.settings.candykat.HoverSettings" />
 
+    <!-- Hardware keys -->
     <PreferenceScreen
         android:key="hardwarekeys_settings"
         android:fragment="com.android.settings.slim.HardwareKeysSettings"
         android:title="@string/button_keys_title" />
 
+    <!-- Heads Up -->		
+    <PreferenceScreen
+        android:key="headsup_settings"
+        android:id="@+id/headsup_settings"
+        android:title="@string/heads_up_title"
+        android:fragment="com.android.settings.candykat.HeadsUp" />
+
+    <!-- Hover -->	
+    <PreferenceScreen
+    	android:key="hover_settings"
+        android:title="@string/hover_title"
+        android:fragment="com.android.settings.candykat.HoverSettings" />
+
+    <!-- Lockscreen -->
     <PreferenceScreen
         android:key="lock_screen_settings"
         android:fragment="com.android.settings.slim.LockscreenInterface"
         android:title="@string/lock_screen_title" />
 
+    <!-- Nav bar -->
     <PreferenceScreen
         android:key="navbar_settings"
         android:fragment="com.android.settings.slim.NavbarSettings"
         android:title="@string/navigation_bar" />
 
+    <!-- Notification drawer -->
     <PreferenceScreen
         android:key="notification_drawer_qs"
         android:fragment="com.android.settings.slim.NotificationDrawerQsSettings"
         android:title="@string/notification_drawer_qs_title" />
 
+    <!-- Peek -->
     <PreferenceScreen
         android:key="peek_settings"
         android:fragment="com.android.settings.candykat.PeekSettings"
         android:title="@string/peek_settings_title" />
 
+    <!-- Recents -->
     <PreferenceScreen
 	android:key="recent_panel"
         android:fragment="com.android.settings.candykat.RecentPanelSettings"
         android:title="@string/recent_panel_settings_title" />
 
+    <!-- Shake -->
     <PreferenceScreen
         android:key="shake_events"
         android:fragment="com.android.settings.slim.ShakeEvents"
         android:title="@string/shake_events_title" />
 
+    <!-- Pie -->
     <PreferenceScreen
         android:key="pie_settings"
         android:fragment="com.android.settings.slim.PieControl"
         android:title="@string/pie_control_title" />
 
+    <!-- Status bar -->
     <PreferenceScreen
         android:key="status_bar"
         android:fragment="com.android.settings.slim.StatusBar"
