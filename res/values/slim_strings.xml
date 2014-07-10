@@ -517,6 +517,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- StatusBar Battery Settings -->
     <string name="battery_icon_title">Battery icon</string>
+    <string name="battery_summary">Set style </string>
     <string name="battery_status_icon">Icon</string>
     <string name="battery_status_percentage">Percentage</string>
     <string name="battery_status_icon_percentage">Icon with percentage</string>

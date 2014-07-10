@@ -23,6 +23,14 @@
     <PreferenceCategory
         android:title="@string/status_bar_style_title">
 
+        <!-- Battery icon -->
+        <PreferenceScreen
+            android:fragment="com.android.settings.slim.BatteryIconStyle"
+            android:key="battery_style_pref"
+	    android:summary="@string/battery_summary"
+            android:title="@string/battery_icon_title" />
+
+        <!-- Clock style -->
         <PreferenceScreen
             android:fragment="com.android.settings.slim.StatusBarClockStyle"
             android:key="clock_style_pref"

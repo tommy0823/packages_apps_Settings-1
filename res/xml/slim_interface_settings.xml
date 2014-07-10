@@ -25,12 +25,6 @@
         android:fragment="com.android.settings.candykat.AppCircleSidebar"
         android:title="@string/app_circle_bar_title" />
 
-    <!-- Battery icon -->
-    <PreferenceScreen
-        android:fragment="com.android.settings.slim.BatteryIconStyle"
-        android:key="battery_style_pref"
-        android:title="@string/battery_icon_title" />
-
     <!-- Dpi on the fly -->
     <Preference
         android:key="lcd_density"
