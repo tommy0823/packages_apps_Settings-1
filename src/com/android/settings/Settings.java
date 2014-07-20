@@ -90,7 +90,6 @@ import com.android.settings.slim.BatteryIconStyle;
 import com.android.settings.slim.blacklist.BlacklistSettings;
 import com.android.settings.slim.DisplayRotation;
 import com.android.settings.slim.InterfaceSettings;
-import com.android.settings.slim.NavigationSettings;
 import com.android.settings.slim.quicksettings.QuickSettingsTiles;
 import com.android.settings.slim.ShakeEvents;
 import com.android.settings.slim.QuietHours;
@@ -384,7 +383,6 @@ public class Settings extends PreferenceActivity
         ShakeEvents.class.getName(),
         HomeSettings.class.getName(),
         InterfaceSettings.class.getName(),
-        NavigationSettings.class.getName(),
         ThemeSettings.class.getName(),
         AdvancedSettings.class.getName()
     };
@@ -1199,7 +1197,6 @@ public class Settings extends PreferenceActivity
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
     public static class HomeSettingsActivity extends Settings { /* empty */ }
     public static class InterfaceSettingsActivity extends Settings { /* empty */ }
-    public static class NavigationSettingsActivity extends Settings { /* empty */ }
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
     public static class AdvancedSettingsActivity extends Settings { /* empty */ }
 }
