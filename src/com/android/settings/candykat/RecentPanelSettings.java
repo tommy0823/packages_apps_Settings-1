@@ -37,11 +37,13 @@ public class RecentPanelSettings extends SettingsPreferenceFragment
     private static final String RECENT_PANEL_LEFTY_MODE = "recent_panel_lefty_mode";
     private static final String RECENT_PANEL_SCALE = "recent_panel_scale";
     private static final String RECENT_PANEL_EXPANDED_MODE = "recent_panel_expanded_mode";
+    private static final String RECENT_PANEL_BG_COLOR =	"recent_panel_bg_color";
 
     private CheckBoxPreference mRecentsShowTopmost;
     private CheckBoxPreference mRecentPanelLeftyMode;
     private ListPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
+    private ColorPickerPreference mRecentPanelBgColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,12 +95,25 @@ public class RecentPanelSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.RECENT_PANEL_EXPANDED_MODE, value);
             return true;
+        } else if (preference == mRecentPanelBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENT_PANEL_BG_COLOR,intHex);
+            return true;
         }
         return false;
     }
 
 
     private void updateRecentsOptions() {
+	    // Recent panel background color 	410
+        int intColor;
+        String hexColor;
+        mRecentPanelBgColor = (ColorPickerPreference) findPreference(RECENT_PANEL_BG_COLOR);
+        mRecentPanelBgColor.setOnPreferenceChangeListener(this);
         final boolean recentLeftyMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT) == Gravity.LEFT;
         mRecentPanelLeftyMode.setChecked(recentLeftyMode);
