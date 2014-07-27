@@ -276,4 +276,7 @@
     <!-- Global action screen record -->
     <string name="shortcut_action_screenrecord">Screenrecord</string>
 
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Screen off gestures</string>
+
 </resources>
