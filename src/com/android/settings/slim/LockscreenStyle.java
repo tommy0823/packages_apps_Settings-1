@@ -78,9 +78,6 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             "lockscreen_misc_color";
 
 
-    private static final String KEY_SEE_THROUGH = "see_through";
-
-
     private String mDefault;
 
     private CheckBoxPreference mColorizeCustom;
@@ -88,7 +85,6 @@ public class LockscreenStyle extends SettingsPreferenceFragment
     private ColorPickerPreference mFrameColor;
     private ColorPickerPreference mLockColor;
     private ColorPickerPreference mDotsColor;
-    private CheckBoxPreference mSeeThrough;
     private ColorPickerPreference mTargetsColor;
     private ColorPickerPreference mMiscColor;
 
@@ -184,13 +180,6 @@ public class LockscreenStyle extends SettingsPreferenceFragment
                 R.string.lockscreen_misc_color_summary), miscColor);
         mMiscColor.setNewPreviewColor(miscColor);
 
-        // lockscreen see through
-        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
-        if (mSeeThrough != null) {
-            mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
-        }
-
         // No lock-slider is available
         boolean dotsDisabled = new LockPatternUtils(getActivity()).isSecure()
             && Settings.Secure.getInt(getContentResolver(),
@@ -264,12 +253,6 @@ public class LockscreenStyle extends SettingsPreferenceFragment
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mSeeThrough) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_SEE_THROUGH,
-                    mSeeThrough.isChecked() ? 1 : 0);
-            return true;
-        }
         if (preference == mLockIcon) {
             int indexOf = mLockIcon.findIndexOfValue(newValue.toString());
             if (indexOf == 0) {
