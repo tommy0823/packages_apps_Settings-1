@@ -19,12 +19,6 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- App remover -->
-    <PreferenceScreen
-        android:id="@+id/system_app_remover"
-        android:title="@string/sizer_title"
-        android:fragment="com.android.settings.candykat.SystemappRemover" />
-
     <!-- App circle -->
     <PreferenceScreen
         android:key="app_circle_sidebar"

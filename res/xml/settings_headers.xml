@@ -75,9 +75,34 @@
         android:fragment="com.android.settings.slim.InterfaceSettings"
         android:title="@string/interface_settings_title" />
 
-    <!-- DEVICE -->
-    <header android:id="@+id/device_section"
-        android:title="@string/header_category_device" />
+	<!-- CandyCenter -->
+	<header
+	    android:id="@+id/candy_center"
+		android:title="@string/candy_center_title"
+		android:icon="@drawable/ic_settings_candycenter">
+		<intent
+			android:action="android.intent.action.MAIN"
+			android:targetPackage="com.candykat.ota"
+			android:targetClass="com.Candy.center.CandyCenter" />
+	</header>
+
+    <!--  ACCOUNTS section -->
+    <header
+            android:id="@+id/account_settings"
+            android:title="@string/account_settings" />
+
+    <header
+            android:id="@+id/account_add"
+            android:title="@string/add_account_label"
+            android:icon="@drawable/ic_menu_add_dark">
+        <intent
+            android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
+    </header>
+
+
+    <!-- SYSTEM -->
+    <header android:id="@+id/system_section"
+        android:title="@string/header_category_system" />
 
     <!-- Home -->
     <header
@@ -142,10 +167,6 @@
         <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
     </header>
 
-    <!-- PERSONAL -->
-    <header android:id="@+id/personal_section"
-        android:title="@string/header_category_personal" />
-
     <!-- Location -->
     <header
         android:fragment="com.android.settings.location.LocationSettings"
@@ -173,23 +194,6 @@
         android:icon="@drawable/ic_settings_backup"
         android:title="@string/privacy_settings"
         android:id="@+id/privacy_settings" />
-
-    <!--  ACCOUNTS section -->
-    <header
-            android:id="@+id/account_settings"
-            android:title="@string/account_settings" />
-
-    <header
-            android:id="@+id/account_add"
-            android:title="@string/add_account_label"
-            android:icon="@drawable/ic_menu_add_dark">
-        <intent
-            android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
-    </header>
-
-    <!-- SYSTEM -->
-    <header android:id="@+id/system_section"
-        android:title="@string/header_category_system" />
 
     <!-- Date & Time -->
     <header
