@@ -99,7 +99,6 @@
             android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
     </header>
 
-
     <!-- SYSTEM -->
     <header android:id="@+id/system_section"
         android:title="@string/header_category_system" />
