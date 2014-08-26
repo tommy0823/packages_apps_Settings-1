@@ -75,16 +75,24 @@
         android:fragment="com.android.settings.slim.InterfaceSettings"
         android:title="@string/interface_settings_title" />
 
-	<!-- CandyCenter -->
-	<header
-	    android:id="@+id/candy_center"
-		android:title="@string/candy_center_title"
-		android:icon="@drawable/ic_settings_candycenter">
-		<intent
-			android:action="android.intent.action.MAIN"
-			android:targetPackage="com.candykat.ota"
-			android:targetClass="com.Candy.center.CandyCenter" />
+    <!-- CandyCenter -->
+    <header
+	android:id="@+id/candy_center"
+	android:title="@string/candy_center_title"
+	android:icon="@drawable/ic_settings_candycenter">
+	    <intent
+		android:action="android.intent.action.MAIN"
+		android:targetPackage="com.candykat.ota"
+		android:targetClass="com.Candy.center.CandyCenter" />
 	</header>
+
+    <!-- Themes -->
+    <header
+        android:id="@+id/themes_settings"
+        android:title="@string/themes_settings_title"
+        android:breadCrumbTitle="@string/themes_settings_title"
+        android:fragment="com.android.settings.ThemeSettings"
+        android:icon="@drawable/prd_ic_themepacks" />
 
     <!--  ACCOUNTS section -->
     <header
