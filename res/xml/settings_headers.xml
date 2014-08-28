@@ -88,7 +88,7 @@
 
     <!-- Themes -->
     <header
-        android:id="@+id/themes_settings"
+        android:id="@+id/theme_engine"
         android:title="@string/themes_settings_title"
         android:breadCrumbTitle="@string/themes_settings_title"
         android:fragment="com.android.settings.ThemeSettings"
