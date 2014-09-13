@@ -29,8 +29,8 @@ Preference mRapier;
 public void onCreate(Bundle savedInstanceState) {
 super.onCreate(savedInstanceState);
 ContentResolver resolver = getActivity().getContentResolver();
-// Load the preferences from an XML resource
-addPreferencesFromResource(R.xml.candykat_team);
+// Load the preferences from an XML resource Broken ATM
+//addPreferencesFromResource(R.xml.candykat_team);
 PreferenceScreen prefSet = getPreferenceScreen();
 mMatthew0776 = prefSet.findPreference("candy_matthew0776");
 mMar5hal = prefSet.findPreference("candy_mar5hal");
