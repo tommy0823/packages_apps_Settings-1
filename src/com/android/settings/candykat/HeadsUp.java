@@ -28,6 +28,8 @@ package com.android.settings.candykat;
   import com.android.settings.SettingsPreferenceFragment;
   import com.android.settings.slim.quicksettings.QuickSettingsUtil;
   import com.android.settings.R;
+  
+  import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class HeadsUp extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
