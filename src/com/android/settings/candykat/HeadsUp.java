@@ -94,6 +94,22 @@ public class HeadsUp extends SettingsPreferenceFragment implements
         mHeadsUpSnoozeTime.setValue(String.valueOf(headsUpSnoozeTime));
         updateHeadsUpSnoozeTimeSummary(headsUpSnoozeTime);
         
+        Resources systemUiResources;
+        try {
+            systemUiResources = pm.getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            return;
+        }
+
+        int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
+        mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
+        mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
+        int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFCATION_DECAY, defaultTimeOut);
+        mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
+        updateHeadsUpTimeOutSummary(headsUpTimeOut);
+        
         // Heads Up background color
         mHeadsUpBgColor =
                 (ColorPickerPreference) findPreference(HEADS_UP_BG_COLOR);
@@ -121,27 +137,9 @@ public class HeadsUp extends SettingsPreferenceFragment implements
             mHeadsUpTextColor.setSummary(hexTextColor);
         }
         mHeadsUpTextColor.setNewPreviewColor(intTextColor);
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(true);
     }
         
-
-        Resources systemUiResources;
-        try {
-            systemUiResources = pm.getResourcesForApplication("com.android.systemui");
-        } catch (Exception e) {
-            return;
-        }
-
-        int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
-        mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
-        mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
-        int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
-                Settings.System.HEADS_UP_NOTIFCATION_DECAY, defaultTimeOut);
-        mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
-        updateHeadsUpTimeOutSummary(headsUpTimeOut);
-    }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -188,9 +186,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements
                     Settings.System.HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN,
                     (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
-         }
-          return false;
-      } else if (preference == mHeadsUpBgColor) {
+         } else if (preference == mHeadsUpBgColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#00ffffff")) {
@@ -217,7 +213,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements
                     intHexText);
             return true;
           }          
-          return false;
+          return false;      
     }
 
     private void updateHeadsUpSnoozeTimeSummary(int value) {
