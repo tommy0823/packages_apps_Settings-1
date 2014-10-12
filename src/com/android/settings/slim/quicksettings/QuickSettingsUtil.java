@@ -58,7 +58,6 @@ import static com.android.internal.util.slim.QSConstants.TILE_WIFI;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFIAP;
 import static com.android.internal.util.slim.QSConstants.TILE_REBOOT;
 import static com.android.internal.util.slim.QSConstants.TILE_REMOTEDISPLAY;
-import static com.android.internal.util.slim.QSConstants.TILE_ONTHEGO;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -180,9 +179,6 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_NETWORKADB, R.string.title_tile_network_adb,
                 "com.android.systemui:drawable/ic_qs_network_adb_off"));
-        registerTile(new QuickSettingsUtil.TileInfo(
-                TILE_ONTHEGO, R.string.title_tile_onthego,
-                "com.android.systemui:drawable/ic_qs_onthego"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {

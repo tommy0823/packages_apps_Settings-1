@@ -956,9 +956,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- QuickSettings: Quick Collapse -->
     <string name="title_collapse_panel">Quick collapse</string>
     <string name="summary_collapse_panel">Close the notification panel upon toggle</string>
-    
-    <!-- QuickSettings: on-the-go -->
-    <string name="title_tile_onthego">On-The-Go</string>
 
     <!-- Stylus Gestures -->
     <string name="gestures_settings_title">Stylus gestures</string>
